@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Yesteryear&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Yesteryear', cursive;
+    font-family: "Yesteryear", cursive;
     box-sizing: border-box;
 }
 
@@ -44,3 +44,48 @@ body {
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
     transform-style: preserve-3d;
 }
+
+.elements {
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateZ(80px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+    -webkit-transform: translateZ(80px);
+    -moz-transform: translateZ(80px);
+    -ms-transform: translateZ(80px);
+    -o-transform: translateZ(80px);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+}
+
+.elements.bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(left-quote.png);
+    background-size: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: 0.5;
+    -webkit-transition: 0.5;
+    -moz-transition: 0.5;
+    -ms-transition: 0.5;
+    -o-transition: 0.5;
+}
+
+.box:hover .elements.bg::before {
+    opacity: 1;
+}
+
